@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duy's profile</title>
     <link rel="shortcut icon" type="image/x-icon" href="./duy.ico?v=1">
-    <!-- Font chữ công nghệ Google Fonts -->
     <link rel="icon" type="image/x-icon" href="duy.ico">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* 1. HIỆU ỨNG CHUYỂN MÀU NỀN & ACCENT THEO CHUẨN RGB CYBER */
         @keyframes rgbCycle {
             0% { --primary-cyan: #00f3ff; --glow-shadow: 0 0 15px rgba(0, 243, 255, 0.4); }
             33% { --primary-cyan: #0066ff; --glow-shadow: 0 0 15px rgba(0, 102, 255, 0.4); }
@@ -22,10 +19,10 @@
 
         :root {
             --bg-color: #030a16;
-            --primary-cyan: #00f3ff; /* Màu Cyan cố định */
-            --card-bg: rgba(0, 243, 255, 0.05); /* Nền mờ xanh Cyan */
-            --border-cyan: rgba(0, 243, 255, 0.3); /* Viền Cyan */
-            --glow-shadow: 0 0 20px rgba(0, 243, 255, 0.35); /* Phát sáng Cyan */
+            --primary-cyan: #00f3ff; 
+            --card-bg: rgba(0, 243, 255, 0.05); 
+            --border-cyan: rgba(0, 243, 255, 0.3); 
+            --glow-shadow: 0 0 20px rgba(0, 243, 255, 0.35); 
             --dark-cyan: #008b94;
             --text-color: #cce7ff;
         }
@@ -45,12 +42,10 @@
             animation: rgbGlow 12s infinite alternate ease-in-out;
         }
 
-        /* Chuyển màu mượt cho các viền & hiệu ứng sáng */
         header, .card, .avatar-box::before, .social-btn, .project-card, .btn-tech, input, textarea {
             transition: border-color 1s ease, box-shadow 1s ease, color 1s ease;
         }
 
-        /* Nền Canvas cho hiệu ứng Hạt Cyber */
         #particles-js {
             position: fixed;
             top: 0;
@@ -60,14 +55,12 @@
             z-index: -1;
         }
 
-        /* Container chính */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Header / Hero Section */
         header {
             text-align: center;
             padding: 60px 20px;
@@ -150,7 +143,6 @@
             box-shadow: var(--glow-shadow);
         }
 
-        /* Bảng Thông tin cá nhân & Trường học */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -176,7 +168,6 @@
             font-weight: 600;
         }
 
-        /* Club Section */
         .club-list {
             list-style: none;
             display: flex;
@@ -224,13 +215,11 @@
             margin-bottom: 4px;
         }
 
-        /* Skills */
         .skill-item { margin-bottom: 15px; }
         .skill-name { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.9rem; }
         .skill-bar { width: 100%; height: 10px; background: rgba(0, 243, 255, 0.1); border-radius: 5px; overflow: hidden; border: 1px solid var(--border-cyan); }
         .skill-per { height: 100%; background: var(--primary-cyan); box-shadow: 0 0 10px var(--primary-cyan); width: 0; transition: width 1.5s ease; }
 
-        /* Projects Section */
         .empty-projects {
             text-align: center;
             padding: 30px;
@@ -274,7 +263,6 @@
             box-shadow: var(--glow-shadow);
         }
 
-        /* Form Thêm Dự Án */
         .add-project-form {
             display: none;
             margin-top: 20px;
@@ -296,7 +284,6 @@
             outline: none;
         }
 
-        /* Social Icons */
         .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
         .social-btn {
             color: var(--primary-cyan);
@@ -327,7 +314,6 @@
             text-shadow: 0 0 10px var(--primary-cyan); 
         }
 
-        /* Styling cho Section Nhạc */
         .cyber-audio-box {
             background: rgba(1, 6, 15, 0.8);
             border: 1px solid var(--border-cyan);
@@ -363,7 +349,6 @@
             color: var(--dark-cyan);
         }
 
-        /* Hiệu ứng sóng nhạc Visualizer */
         .visualizer {
             display: flex;
             align-items: flex-end;
@@ -382,7 +367,6 @@
             transition: height 0.2s ease;
         }
 
-        /* Animation khi nhạc đang phát */
         .visualizer.playing .bar {
             animation: bounce 0.8s infinite alternate ease-in-out;
         }
@@ -406,7 +390,6 @@
             100% { transform: scale(1.1); opacity: 1; }
         }
 
-        /* Thanh Banner UIT Header */
         .uit-top-banner {
             width: 100%;
             background: rgba(3, 10, 22, 0.6); 
@@ -470,13 +453,10 @@
     </style>
 </head>
 <body>
-<!-- BANNER UIT HỒ CHÍ MINH TOP BAR -->
 <div class="uit-top-banner">
     <div class="uit-banner-content">
-        <!-- Logo 20 Năm UIT -->
         <img src="https://www.uit.edu.vn/strapi/uploads/UIT_20_01_f687725dd2.png" alt="UIT 20 Years Logo" class="uit-logo-img" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/UIT_Logo.png/640px-UIT_Logo.png'">
         
-        <!-- Nội dung Chữ -->
         <div class="uit-text-box">
             <div class="uit-subtext">ĐẠI HỌC QUỐC GIA TP. HỒ CHÍ MINH</div>
             <div class="uit-maintext">TRƯỜNG ĐẠI HỌC <span>CÔNG NGHỆ THÔNG TIN</span></div>
@@ -484,16 +464,13 @@
     </div>
 </div>
 
-    <!-- BỘ PHÁT NHẠC (AUDIO PLAYER) -->
     <div class="music-player">
         <audio id="bgMusic" loop src="uit.mp3"></audio>
     </div>
 
-    <!-- Background hiệu ứng hạt Cyber -->
     <div id="particles-js"></div>
 
     <div class="container">
-        <!-- HEADER / GIOI THIEU -->
         <header>
             <div class="avatar-box">
                 <img src="https://cdn.phototourl.com/free/2026-09-13-9e5de919-2ff5-4b7b-b6c1-b024508aa114.jpg" alt="Avatar" class="avatar-img">
@@ -510,7 +487,6 @@
             </div>
         </header>
 
-        <!-- MỤC THÔNG TIN CÁ NHÂN VÀ TRƯỜNG HỌC -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-user-code"></i> PERSONAL INFO</h2>
             <div class="info-grid">
@@ -541,13 +517,11 @@
             </div>
         </div>
         
-        <!-- MỤC CÂU LẠC BỘ (ĐÃ THÊM AVATAR CHO CÁC CLB) -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-users"></i> CLUBS & COMMUNITIES</h2>
             <div class="club-list">
                 <div class="club-item">
                     <div class="club-item-content">
-                        <!-- Thay link ảnh avatar Đoàn Khoa CNPM bên dưới -->
                         <img src="https://i.postimg.cc/zGwzBSvf/image.png" alt="Đoàn Khoa CNPM" class="club-avatar">
                         <div class="club-info">
                             <h4>ĐOÀN KHOA Công nghệ Phần mềm</h4>
@@ -558,7 +532,6 @@
                 
                 <div class="club-item">
                     <div class="club-item-content">
-                        <!-- Thay link ảnh avatar UIT Chess Club bên dưới -->
                         <img src="https://i.postimg.cc/RCnNmt79/image.png" alt="UIT Chess Club" class="club-avatar">
                         <div class="club-info">
                             <h4>UIT Chess CLUB</h4>
@@ -569,7 +542,6 @@
             </div>
         </div>
 
-        <!-- ABOUT ME SECTION -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-terminal"></i> ABOUT ME</h2>
             <p style="line-height: 1.6;">
@@ -577,12 +549,10 @@
             </p>
         </div>
 
-        <!-- MUSIC PLAYER SECTION -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-compact-disc"></i> AUDIO</h2>
             
             <div class="cyber-audio-box">
-                <!-- Thông tin bài hát -->
                 <div class="track-info">
                     <i class="fas fa-music track-icon"></i>
                     <div>
@@ -591,7 +561,6 @@
                     </div>
                 </div>
 
-                <!-- Sóng nhạc Visualizer -->
                 <div class="visualizer" id="visualizer">
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -603,7 +572,6 @@
                     <div class="bar"></div>
                 </div>
 
-                <!-- Bộ điều khiển phát nhạc -->
                 <div class="audio-controls">
                     <button class="btn-tech" onclick="toggleMusicSection()">
                         <i id="sectionPlayIcon" class="fas fa-play"></i> <span id="sectionPlayText">PLAY</span>
@@ -612,7 +580,6 @@
             </div>
         </div>
 
-        <!-- SKILLS SECTION -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-code"></i> SYSTEM SKILLS</h2>
             
@@ -637,34 +604,30 @@
             </div>
         </div>
 
-        <!-- PROJECTS SECTION (DỰ ÁN) -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-project-diagram"></i>PROJECTS</h2>
             
-<div class="project-card">
-    <h3>GALA HOA NIÊN</h3>
-    <p>Làm thế nào để bất kỳ sinh viên nào của Khoa CNPM cũng cảm thấy mình là một phần của chương trình?</p>
-    <div class="tech-stack">
-        <span>Ban hậu cần</span><br>
-        <span>Vai trò: Trưởng Ban</span><br>
-        <span>Thời gian: 13/9/2026 - 20/9/2026</span>
-    </div>
-</div>
-            <!-- Danh sách dự án (hiển thị khi thêm) -->
+            <div class="project-card">
+                <h3>GALA HOA NIÊN</h3>
+                <p>Làm thế nào để bất kỳ sinh viên nào của Khoa CNPM cũng cảm thấy mình là một phần của chương trình?</p>
+                <div class="tech-stack">
+                    <span>Ban hậu cần</span><br>
+                    <span>Vai trò: Trưởng Ban</span><br>
+                    <span>Thời gian: 13/9/2026 - 20/9/2026</span>
+                </div>
+            </div>
+            
             <div class="project-grid" id="projectGrid"></div>
         </div>
 
-        <!-- FOOTER -->
         <div class="terminal-footer">
             <p>System status: <span style="color: var(--primary-cyan);">ONLINE</span></p>
             <p>“nóng giận là bản năng, bình tĩnh là bản lĩnh”</p>
         </div>
     </div>
 
-    <!-- Script tạo hiệu ứng hạt (Particles JS) -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Cấu hình hiệu ứng Hạt Cyber
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
@@ -702,7 +665,6 @@
             "retina_detect": true
         });
 
-        // Hiệu ứng gõ chữ tự động (Typewriter)
         const words = ["SINH VIÊN UIT", "INFORMATION TECHNOLOGY", "SOFTWARE ENGINEERING", "NO PAIN NO GAIN"];
         let i = 0;
         let timer;
@@ -742,7 +704,6 @@
         }
         typingEffect();
 
-        // Animation chạy phần trăm Skill Bar khi load
         window.addEventListener('load', () => {
             const skillBars = document.querySelectorAll('.skill-per');
             skillBars.forEach(bar => {
@@ -778,7 +739,6 @@
             }
         }
 
-        // Tự động kích hoạt âm thanh khi người dùng click lần đầu vào trang
         document.addEventListener('click', function initAudio() {
             if (music.paused) {
                 music.play().then(() => {

@@ -377,10 +377,83 @@ a:hover {
     0% { transform: scale(1); opacity: 0.7; }
     100% { transform: scale(1.1); opacity: 1; }
 }
+        /* Thanh Banner UIT Header (Đã xóa nền xanh - Phong cách Trong suốt / Cyberpunk) */
+.uit-top-banner {
+    width: 100%;
+    background: rgba(3, 10, 22, 0.6); /* Nền mờ tối hòa nhập với background trang web */
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 100;
+}
+
+.uit-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 1200px;
+}
+
+.uit-logo-img {
+    height: 48px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.5));
+}
+
+.uit-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-family: 'Fira Code', Arial, Helvetica, sans-serif ;
+}
+
+.uit-subtext {
+    color: #a0c4e2; /* Màu chữ sáng dễ nhìn trên nền tối */
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.uit-maintext {
+    color: #ff8c00; /* Màu cam phát sáng */
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
+}
+
+.uit-maintext span {
+    color: var(--primary-cyan); /* Màu Cyan nổi bật */
+    text-shadow: 0 0 8px var(--primary-cyan);
+}
+
+@media (max-width: 768px) {
+    .uit-top-banner { padding: 10px; }
+    .uit-logo-img { height: 36px; }
+    .uit-subtext { font-size: 0.75rem; }
+    .uit-maintext { font-size: 0.95rem; }
+}
     </style>
 </head>
 <body>
-
+<!-- BANNER UIT HỒ CHÍ MINH TOP BAR -->
+<div class="uit-top-banner">
+    <div class="uit-banner-content">
+        <!-- Logo 20 Năm UIT -->
+        <img src="https://www.uit.edu.vn/strapi/uploads/UIT_20_01_f687725dd2.png" alt="UIT 20 Years Logo" class="uit-logo-img" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/UIT_Logo.png/640px-UIT_Logo.png'">
+        
+        <!-- Nội dung Chữ -->
+        <div class="uit-text-box">
+            <div class="uit-subtext">ĐẠI HỌC QUỐC GIA TP. HỒ CHÍ MINH</div>
+            <div class="uit-maintext">TRƯỜNG ĐẠI HỌC <span>CÔNG NGHỆ THÔNG TIN</span></div>
+        </div>
+    </div>
+</div>
     <!-- BỘ PHÁT NHẠC (AUDIO PLAYER) -->
     <div class="music-player">
         <!-- THAY ĐƯỜNG DẪN NHẠC CỦA BẠN VÀO NƠI CÓ SRC BÊN DƯỚI -->

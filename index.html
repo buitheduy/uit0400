@@ -28,7 +28,7 @@
             --glow-shadow: 0 0 20px rgba(0, 243, 255, 0.35); /* Phát sáng Cyan */
             --dark-cyan: #008b94;
             --text-color: #cce7ff;
-}
+        }
 
         * {
             margin: 0;
@@ -66,7 +66,6 @@
             margin: 0 auto;
             padding: 40px 20px;
         }
-
 
         /* Header / Hero Section */
         header {
@@ -180,19 +179,49 @@
         /* Club Section */
         .club-list {
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .club-item {
-            margin-bottom: 12px;
-            padding: 10px;
+            padding: 12px 15px;
             background: rgba(0, 243, 255, 0.03);
             border: 1px dashed var(--border-cyan);
-            border-radius: 6px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
-        .club-item h4 {
+        .club-item:hover {
+            border-style: solid;
+            background: rgba(0, 243, 255, 0.08);
+        }
+
+        .club-item-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .club-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-cyan);
+            box-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .club-item:hover .club-avatar {
+            transform: scale(1.1);
+        }
+
+        .club-info h4 {
             color: var(--primary-cyan);
             font-family: 'Orbitron', sans-serif;
+            margin-bottom: 4px;
         }
 
         /* Skills */
@@ -284,160 +313,160 @@
         .terminal-footer { text-align: center; font-size: 0.8rem; color: var(--dark-cyan); margin-top: 40px; }
         .blink { animation: blinker 1s linear infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
-        /* Xóa gạch chân cho TẤT CẢ các thẻ <a> trên trang web */
-/* Trạng thái mặc định của thẻ <a> */
-a {
-    text-decoration: none; /* Xóa gạch chân */
-    display: inline-block; /* BẮT BUỘC: Để thẻ <a> có thể di chuyển và nổi lên được */
-    color: var(--primary-cyan);
-    transition: all 0.3s ease; /* Tạo hiệu ứng chuyển động mượt mà */
-}
 
-/* Hiệu ứng NỔI LÊN khi di chuột vào (Hover) */
-a:hover {
-    transform: translateY(-5px); /* Đẩy thẻ nổi lên trên 5px */
-    color: #ffffff; /* Đổi màu chữ sang trắng */
-    text-shadow: 0 0 10px var(--primary-cyan); /* Phát sáng viền chữ */
-}
-/* Styling cho Section Nhạc */
-.cyber-audio-box {
-    background: rgba(1, 6, 15, 0.8);
-    border: 1px solid var(--border-cyan);
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
+        a {
+            text-decoration: none; 
+            display: inline-block; 
+            color: var(--primary-cyan);
+            transition: all 0.3s ease; 
+        }
 
-.track-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-}
+        a:hover {
+            transform: translateY(-5px); 
+            color: #ffffff; 
+            text-shadow: 0 0 10px var(--primary-cyan); 
+        }
 
-.track-icon {
-    font-size: 2rem;
-    color: var(--primary-cyan);
-    animation: pulse 2s infinite alternate;
-}
+        /* Styling cho Section Nhạc */
+        .cyber-audio-box {
+            background: rgba(1, 6, 15, 0.8);
+            border: 1px solid var(--border-cyan);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
 
-.track-title {
-    color: #fff;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
-}
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
 
-.track-artist {
-    font-size: 0.8rem;
-    color: var(--dark-cyan);
-}
+        .track-icon {
+            font-size: 2rem;
+            color: var(--primary-cyan);
+            animation: pulse 2s infinite alternate;
+        }
 
-/* Hiệu ứng sóng nhạc Visualizer */
-.visualizer {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 6px;
-    height: 40px;
-    width: 100%;
-}
+        .track-title {
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+        }
 
-.visualizer .bar {
-    width: 6px;
-    height: 8px;
-    background: var(--primary-cyan);
-    border-radius: 3px;
-    box-shadow: var(--glow-shadow);
-    transition: height 0.2s ease;
-}
+        .track-artist {
+            font-size: 0.8rem;
+            color: var(--dark-cyan);
+        }
 
-/* Animation khi nhạc đang phát */
-.visualizer.playing .bar {
-    animation: bounce 0.8s infinite alternate ease-in-out;
-}
+        /* Hiệu ứng sóng nhạc Visualizer */
+        .visualizer {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 6px;
+            height: 40px;
+            width: 100%;
+        }
 
-.visualizer.playing .bar:nth-child(1) { animation-delay: 0.1s; }
-.visualizer.playing .bar:nth-child(2) { animation-delay: 0.4s; }
-.visualizer.playing .bar:nth-child(3) { animation-delay: 0.2s; }
-.visualizer.playing .bar:nth-child(4) { animation-delay: 0.6s; }
-.visualizer.playing .bar:nth-child(5) { animation-delay: 0.3s; }
-.visualizer.playing .bar:nth-child(6) { animation-delay: 0.5s; }
-.visualizer.playing .bar:nth-child(7) { animation-delay: 0.2s; }
-.visualizer.playing .bar:nth-child(8) { animation-delay: 0.7s; }
+        .visualizer .bar {
+            width: 6px;
+            height: 8px;
+            background: var(--primary-cyan);
+            border-radius: 3px;
+            box-shadow: var(--glow-shadow);
+            transition: height 0.2s ease;
+        }
 
-@keyframes bounce {
-    0% { height: 8px; }
-    100% { height: 38px; }
-}
+        /* Animation khi nhạc đang phát */
+        .visualizer.playing .bar {
+            animation: bounce 0.8s infinite alternate ease-in-out;
+        }
 
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 0.7; }
-    100% { transform: scale(1.1); opacity: 1; }
-}
-        /* Thanh Banner UIT Header (Đã xóa nền xanh - Phong cách Trong suốt / Cyberpunk) */
-.uit-top-banner {
-    width: 100%;
-    background: rgba(3, 10, 22, 0.6); /* Nền mờ tối hòa nhập với background trang web */
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 100;
-}
+        .visualizer.playing .bar:nth-child(1) { animation-delay: 0.1s; }
+        .visualizer.playing .bar:nth-child(2) { animation-delay: 0.4s; }
+        .visualizer.playing .bar:nth-child(3) { animation-delay: 0.2s; }
+        .visualizer.playing .bar:nth-child(4) { animation-delay: 0.6s; }
+        .visualizer.playing .bar:nth-child(5) { animation-delay: 0.3s; }
+        .visualizer.playing .bar:nth-child(6) { animation-delay: 0.5s; }
+        .visualizer.playing .bar:nth-child(7) { animation-delay: 0.2s; }
+        .visualizer.playing .bar:nth-child(8) { animation-delay: 0.7s; }
 
-.uit-banner-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    max-width: 1200px;
-}
+        @keyframes bounce {
+            0% { height: 8px; }
+            100% { height: 38px; }
+        }
 
-.uit-logo-img {
-    height: 48px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.5));
-}
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
 
-.uit-text-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    font-family: 'Fira Code', Arial, Helvetica, sans-serif ;
-}
+        /* Thanh Banner UIT Header */
+        .uit-top-banner {
+            width: 100%;
+            background: rgba(3, 10, 22, 0.6); 
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 100;
+        }
 
-.uit-subtext {
-    color: #a0c4e2; /* Màu chữ sáng dễ nhìn trên nền tối */
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+        .uit-banner-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 1200px;
+        }
 
-.uit-maintext {
-    color: #ff8c00; /* Màu cam phát sáng */
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
-}
+        .uit-logo-img {
+            height: 48px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.5));
+        }
 
-.uit-maintext span {
-    color: var(--primary-cyan); /* Màu Cyan nổi bật */
-    text-shadow: 0 0 8px var(--primary-cyan);
-}
+        .uit-text-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            font-family: 'Fira Code', Arial, Helvetica, sans-serif ;
+        }
 
-@media (max-width: 768px) {
-    .uit-top-banner { padding: 10px; }
-    .uit-logo-img { height: 36px; }
-    .uit-subtext { font-size: 0.75rem; }
-    .uit-maintext { font-size: 0.95rem; }
-}
+        .uit-subtext {
+            color: #a0c4e2; 
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .uit-maintext {
+            color: #ff8c00; 
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
+        }
+
+        .uit-maintext span {
+            color: var(--primary-cyan); 
+            text-shadow: 0 0 8px var(--primary-cyan);
+        }
+
+        @media (max-width: 768px) {
+            .uit-top-banner { padding: 10px; }
+            .uit-logo-img { height: 36px; }
+            .uit-subtext { font-size: 0.75rem; }
+            .uit-maintext { font-size: 0.95rem; }
+        }
     </style>
 </head>
 <body>
@@ -454,9 +483,9 @@ a:hover {
         </div>
     </div>
 </div>
+
     <!-- BỘ PHÁT NHẠC (AUDIO PLAYER) -->
     <div class="music-player">
-        <!-- THAY ĐƯỜNG DẪN NHẠC CỦA BẠN VÀO NƠI CÓ SRC BÊN DƯỚI -->
         <audio id="bgMusic" loop src="uit.mp3"></audio>
     </div>
 
@@ -467,7 +496,6 @@ a:hover {
         <!-- HEADER / GIOI THIEU -->
         <header>
             <div class="avatar-box">
-                <!-- Đường dẫn ảnh đại diện -->
                 <img src="https://cdn.phototourl.com/free/2026-09-13-9e5de919-2ff5-4b7b-b6c1-b024508aa114.jpg" alt="Avatar" class="avatar-img">
             </div>
             <h1 class="glitch-title">BÙI THẾ DUY</h1>
@@ -484,7 +512,7 @@ a:hover {
 
         <!-- MỤC THÔNG TIN CÁ NHÂN VÀ TRƯỜNG HỌC -->
         <div class="card">
-            <h2 class="section-title"><i class="fas fa-user-code"></i>? PERSONAL INFO</h2>
+            <h2 class="section-title"><i class="fas fa-user-code"></i> PERSONAL INFO</h2>
             <div class="info-grid">
                 <div class="info-item">
                     <label>Player</label>
@@ -513,18 +541,30 @@ a:hover {
             </div>
         </div>
         
-        <!-- MỤC CÂU LẠC BỘ -->
+        <!-- MỤC CÂU LẠC BỘ (ĐÃ THÊM AVATAR CHO CÁC CLB) -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-users"></i> CLUBS & COMMUNITIES</h2>
             <div class="club-list">
                 <div class="club-item">
-                    <h4>ĐOÀN KHOA Công nghệ Phần mềm</h4>
-                    <p style="font-size: 0.85rem; color: #a0c4e2;">Vị trí: Chưa rõ</p>
+                    <div class="club-item-content">
+                        <!-- Thay link ảnh avatar Đoàn Khoa CNPM bên dưới -->
+                        <img src="https://via.placeholder.com/50/00f3ff/030a16?text=SE" alt="Đoàn Khoa CNPM" class="club-avatar">
+                        <div class="club-info">
+                            <h4>ĐOÀN KHOA Công nghệ Phần mềm</h4>
+                            <p style="font-size: 0.85rem; color: #a0c4e2;">Vị trí: Chưa rõ</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="club-item">
-                    <h4>UIT Chess CLUB</h4>
-                    <p style="font-size: 0.85rem; color: #a0c4e2;">Chuẩn bị tham gia...</p>
+                    <div class="club-item-content">
+                        <!-- Thay link ảnh avatar UIT Chess Club bên dưới -->
+                        <img src="https://via.placeholder.com/50/00f3ff/030a16?text=CHESS" alt="UIT Chess Club" class="club-avatar">
+                        <div class="club-info">
+                            <h4>UIT Chess CLUB</h4>
+                            <p style="font-size: 0.85rem; color: #a0c4e2;">Chuẩn bị tham gia...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -536,40 +576,42 @@ a:hover {
                 Hí luu! Tui là UITer, sinh viên UIT K26, rất vui được gặp bạn! Hẹ hẹ hẹ =))))))
             </p>
         </div>
-<!-- MUSIC PLAYER SECTION -->
-<div class="card">
-    <h2 class="section-title"><i class="fas fa-compact-disc"></i> AUDIO</h2>
-    
-    <div class="cyber-audio-box">
-        <!-- Thông tin bài hát -->
-        <div class="track-info">
-            <i class="fas fa-music track-icon"></i>
-            <div>
-                <h3 id="trackTitle" class="track-title">UIT_MUSIC.mp3</h3>
-                <p id="trackArtist" class="track-artist">Name: Khát vọng 20 | UIT KỶ NIỆM 20</p>
+
+        <!-- MUSIC PLAYER SECTION -->
+        <div class="card">
+            <h2 class="section-title"><i class="fas fa-compact-disc"></i> AUDIO</h2>
+            
+            <div class="cyber-audio-box">
+                <!-- Thông tin bài hát -->
+                <div class="track-info">
+                    <i class="fas fa-music track-icon"></i>
+                    <div>
+                        <h3 id="trackTitle" class="track-title">UIT_MUSIC.mp3</h3>
+                        <p id="trackArtist" class="track-artist">Name: Khát vọng 20 | UIT KỶ NIỆM 20</p>
+                    </div>
+                </div>
+
+                <!-- Sóng nhạc Visualizer -->
+                <div class="visualizer" id="visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <!-- Bộ điều khiển phát nhạc -->
+                <div class="audio-controls">
+                    <button class="btn-tech" onclick="toggleMusicSection()">
+                        <i id="sectionPlayIcon" class="fas fa-play"></i> <span id="sectionPlayText">PLAY</span>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <!-- Sóng nhạc Visualizer (Hiệu ứng thanh nhảy theo nhạc) -->
-        <div class="visualizer" id="visualizer">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-
-        <!-- Bộ điều khiển phát nhạc -->
-        <div class="audio-controls">
-            <button class="btn-tech" onclick="toggleMusicSection()">
-                <i id="sectionPlayIcon" class="fas fa-play"></i> <span id="sectionPlayText">PLAY</span>
-            </button>
-        </div>
-    </div>
-</div>
         <!-- SKILLS SECTION -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-code"></i> SYSTEM SKILLS</h2>
@@ -607,28 +649,6 @@ a:hover {
 
             <!-- Danh sách dự án (hiển thị khi thêm) -->
             <div class="project-grid" id="projectGrid"></div>
-
-            <!-- DỰ ÁN 1 
-<div class="project-card">
-    <h3>TÊN DỰ ÁN CỦA BẠN</h3>
-    <p>Mô tả ngắn gọn về dự án, chức năng chính hoặc vấn đề mà dự án giải quyết.</p>
-    <div class="tech-stack">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-    </div>
-</div>
-
-<!-- DỰ ÁN 2 (Muốn thêm bao nhiêu dự án thì nhân bản đoạn này) 
-<div class="project-card">
-    <h3>WEBSITE QUẢN LÝ THƯ VIỆN</h3>
-    <p>Hệ thống hỗ trợ tra cứu sách, quản lý mượn trả và thống kê dữ liệu học sinh.</p>
-    <div class="tech-stack">
-        <span>Python</span>
-        <span>SQLite</span>
-        <span>CustomTkinter</span>
-    </div>
-</div> -->
         </div>
 
         <!-- FOOTER -->
@@ -641,8 +661,7 @@ a:hover {
     <!-- Script tạo hiệu ứng hạt (Particles JS) -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        
-        // 1. Cấu hình hiệu ứng Hạt Cyber
+        // Cấu hình hiệu ứng Hạt Cyber
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
@@ -680,7 +699,7 @@ a:hover {
             "retina_detect": true
         });
 
-        // 2. Hiệu ứng gõ chữ tự động (Typewriter)
+        // Hiệu ứng gõ chữ tự động (Typewriter)
         const words = ["SINH VIÊN UIT", "INFORMATION TECHNOLOGY", "SOFTWARE ENGINEERING", "NO PAIN NO GAIN"];
         let i = 0;
         let timer;
@@ -720,7 +739,7 @@ a:hover {
         }
         typingEffect();
 
-        // 3. Animation chạy phần trăm Skill Bar khi load
+        // Animation chạy phần trăm Skill Bar khi load
         window.addEventListener('load', () => {
             const skillBars = document.querySelectorAll('.skill-per');
             skillBars.forEach(bar => {
@@ -728,94 +747,43 @@ a:hover {
             });
         });
 
-        // 4. Xử lý Trình Phát Nhạc
-        function toggleMusic() {
-            const music = document.getElementById('bgMusic');
-            const btn = document.getElementById('musicToggle');
+        const music = document.getElementById('bgMusic');
+        const visualizer = document.getElementById('visualizer');
+        const playIcon = document.getElementById('sectionPlayIcon');
+        const playText = document.getElementById('sectionPlayText');
+
+        function updateAudioUI(isPlaying) {
+            if (isPlaying) {
+                visualizer.classList.add('playing');
+                if (playIcon) playIcon.className = 'fas fa-pause';
+                if (playText) playText.innerText = 'PAUSE AUDIO';
+            } else {
+                visualizer.classList.remove('playing');
+                if (playIcon) playIcon.className = 'fas fa-play';
+                if (playText) playText.innerText = 'PLAY AUDIO';
+            }
+        }
+
+        function toggleMusicSection() {
             if (music.paused) {
-                music.play();
-                btn.innerHTML = '<i class="fas fa-pause"></i>';
+                music.play().then(() => {
+                    updateAudioUI(true);
+                }).catch(err => console.log("Lỗi phát nhạc:", err));
             } else {
                 music.pause();
-                btn.innerHTML = '<i class="fas fa-play"></i>';
+                updateAudioUI(false);
             }
         }
 
-        // 5. Thêm Dự Án Mới
-        function toggleForm() {
-            const form = document.getElementById('projectForm');
-            form.style.display = form.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function addProject() {
-            const title = document.getElementById('projTitle').value;
-            const desc = document.getElementById('projDesc').value;
-            const tech = document.getElementById('projTech').value;
-
-            if (!title || !desc) {
-                alert("Vui lòng nhập tên và mô tả dự án!");
-                return;
+        // Tự động kích hoạt âm thanh khi người dùng click lần đầu vào trang
+        document.addEventListener('click', function initAudio() {
+            if (music.paused) {
+                music.play().then(() => {
+                    updateAudioUI(true);
+                }).catch(() => {});
             }
-
-            // Ẩn thông báo chưa có dự án
-            document.getElementById('emptyNotice').style.display = 'none';
-
-            // Tạo Card dự án mới
-            const grid = document.getElementById('projectGrid');
-            const newCard = document.createElement('div');
-            newCard.className = 'project-card';
-            newCard.innerHTML = `
-                <h3>${title}</h3>
-                <p>${desc}</p>
-                <div class="tech-stack">
-                    <span>${tech || 'Công nghệ'}</span>
-                </div>
-            `;
-            grid.appendChild(newCard);
-
-            // Reset form
-            document.getElementById('projTitle').value = '';
-            document.getElementById('projDesc').value = '';
-            document.getElementById('projTech').value = '';
-            toggleForm();
-        }
-const music = document.getElementById('bgMusic');
-const visualizer = document.getElementById('visualizer');
-const playIcon = document.getElementById('sectionPlayIcon');
-const playText = document.getElementById('sectionPlayText');
-
-function updateAudioUI(isPlaying) {
-    if (isPlaying) {
-        visualizer.classList.add('playing');
-        if (playIcon) playIcon.className = 'fas fa-pause';
-        if (playText) playText.innerText = 'PAUSE AUDIO';
-    } else {
-        visualizer.classList.remove('playing');
-        if (playIcon) playIcon.className = 'fas fa-play';
-        if (playText) playText.innerText = 'PLAY AUDIO';
-    }
-}
-
-function toggleMusicSection() {
-    if (music.paused) {
-        music.play().then(() => {
-            updateAudioUI(true);
-        }).catch(err => console.log("Lỗi phát nhạc:", err));
-    } else {
-        music.pause();
-        updateAudioUI(false);
-    }
-}
-
-// Tự động kích hoạt âm thanh khi người dùng click lần đầu vào trang
-document.addEventListener('click', function initAudio() {
-    if (music.paused) {
-        music.play().then(() => {
-            updateAudioUI(true);
-        }).catch(() => {});
-    }
-    document.removeEventListener('click', initAudio);
-}, { once: true });
+            document.removeEventListener('click', initAudio);
+        }, { once: true });
     </script>
 </body>
 </html>

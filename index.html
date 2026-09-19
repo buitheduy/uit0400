@@ -552,6 +552,39 @@
                 text-align: center;
             }
         }
+        :root {
+    --status-completed: #00ff66; 
+    --status-failed: #ff3333;  
+}
+
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.status-badge.failed {
+    background: rgba(255, 51, 51, 0.1);
+    color: var(--status-failed);
+    border: 1px solid var(--status-failed);
+    box-shadow: 0 0 8px rgba(255, 51, 51, 0.2);
+}
+
+
+.status-badge.completed {
+    background: rgba(0, 255, 102, 0.1);
+    color: var(--status-completed);
+    border: 1px solid var(--status-completed);
+    box-shadow: 0 0 8px rgba(0, 255, 102, 0.2);
+}
     </style>
 </head>
 <body>
@@ -633,7 +666,7 @@
                             </div>
                         </div>
                         
-                        <span class="status-badge completed"><i class="fas fa-check-circle"></i>Quit</span>
+                        <span class="status-badge failed"><i class="fas fa-check-circle"></i>Quit</span>
                     </div>
                 </div>
                 
@@ -769,7 +802,7 @@
                     <div class="project-header-flex">
                         <h3>GALA HOA NIÊN</h3>
                     
-                        <span class="status-badge completed"><i class="fas fa-check-circle"></i>Failed</span>
+                        <span class="status-badge failed"><i class="fas fa-check-circle"></i>Failed</span>
                     </div>
                     <p>Làm thế nào để bất kỳ sinh viên nào của Khoa CNPM cũng cảm thấy mình là một phần của chương trình?</p>
                     <div class="tech-stack">

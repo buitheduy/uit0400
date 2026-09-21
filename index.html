@@ -553,38 +553,35 @@
             }
         }
         :root {
-    --status-completed: #00ff66; 
-    --status-failed: #ff3333;  
-}
+            --status-completed: #00ff66; 
+            --status-failed: #ff3333;  
+        }
 
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-.status-badge {
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
+        .status-badge.failed {
+            background: rgba(255, 51, 51, 0.1);
+            color: var(--status-failed);
+            border: 1px solid var(--status-failed);
+            box-shadow: 0 0 8px rgba(255, 51, 51, 0.2);
+        }
 
-
-.status-badge.failed {
-    background: rgba(255, 51, 51, 0.1);
-    color: var(--status-failed);
-    border: 1px solid var(--status-failed);
-    box-shadow: 0 0 8px rgba(255, 51, 51, 0.2);
-}
-
-
-.status-badge.completed {
-    background: rgba(0, 255, 102, 0.1);
-    color: var(--status-completed);
-    border: 1px solid var(--status-completed);
-    box-shadow: 0 0 8px rgba(0, 255, 102, 0.2);
-}
+        .status-badge.completed {
+            background: rgba(0, 255, 102, 0.1);
+            color: var(--status-completed);
+            border: 1px solid var(--status-completed);
+            box-shadow: 0 0 8px rgba(0, 255, 102, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -693,6 +690,7 @@
             </p>
         </div>
 
+        <!-- Khung giao diện phát nhạc (Giữ nguyên) -->
         <div class="card">
             <h2 class="section-title"><i class="fas fa-compact-disc"></i> AUDIO</h2>
             
@@ -922,6 +920,7 @@
             }
         }
 
+        // Chỉ phát/dừng khi bấm vào nút trên giao diện
         function toggleMusicSection() {
             if (music.paused) {
                 music.play().then(() => {
@@ -933,14 +932,8 @@
             }
         }
 
-        document.addEventListener('click', function initAudio() {
-            if (music.paused) {
-                music.play().then(() => {
-                    updateAudioUI(true);
-                }).catch(() => {});
-            }
-            document.removeEventListener('click', initAudio);
-        }, { once: true });
+        // Đã xóa sự kiện document.addEventListener('click', ...) ở đây 
+        // để người dùng bấm vào vị trí bất kỳ không bị kích hoạt nhạc tự động nữa.
     </script>
 </body>
 </html>
